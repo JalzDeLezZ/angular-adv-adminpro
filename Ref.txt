@@ -1,0 +1,3 @@
+$ ng g m appRouting --flat
+
+$ ng g c pages/progress -s --skip-tests
