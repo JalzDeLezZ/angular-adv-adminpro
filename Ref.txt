@@ -1,6 +1,19 @@
+
+
+
+$ ng g m auth/auth --flat
+$ ng g m shared/shared --flat
+$ ng g m pages/pages --flat
+$ git push --tags
+$ git tag
+$ git tag -a v1.0.0 -m "Ready Design"
+
+----------------------------------------------
+
 $ ng g c pages/pages --flat --skip-tests -s
 
 $ ng g m appRouting --flat
 
 $ ng g c pages/progress -s --skip-tests
+
 
