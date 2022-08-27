@@ -1,17 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-
+import { SettingsService } from '../services/settings.service';
 @Component({
   selector: 'app-pages',
   templateUrl: './pages.component.html',
   styles: [],
 })
 export class PagesComponent implements OnInit {
-  public tagTheme = document.querySelector('#theme');
 
-  constructor() {}
+  constructor(
+    private _settingsService: SettingsService
+  ) {}
 
   ngOnInit(): void {
-    const url = localStorage.getItem('theme') || './assets/css/colors/megna-dark.css';
-    this.tagTheme?.setAttribute('href', url);
   }
 }
