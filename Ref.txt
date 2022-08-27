@@ -1,3 +1,8 @@
+$ ng g c pages/accountSettings --skip-tests -s
+
+
+$ git tag -a v1.6.0 -m "End Section 6"
+
 $ ng g c components/donut --skip-tests -s
 
 yarn add ng2-charts
