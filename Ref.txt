@@ -1,3 +1,9 @@
+$ ng g c components/donut --skip-tests -s
+
+yarn add ng2-charts
+yarn add chart.js
+
+
 $ ng g c components/increment --skip-tests
 $ ng g m components/components --flat
 

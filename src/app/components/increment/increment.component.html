@@ -6,10 +6,11 @@
   </span>
   <input
     type="number"
+    class="form-control"
+    [ngClass]="{'is-invalid': a_progress > 100 || a_progress < 0}"
     min="0"
     max="100"
-    class="form-control"
-    placeholder="Product name"
+    (ngModelChange)="mOnChange($event)"
     [(ngModel)]="a_progress"
   />
   <span class="input-group-btn">

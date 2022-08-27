@@ -5,9 +5,9 @@ import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
   templateUrl: './increment.component.html',
   styleUrls: ['./increment.component.css'],
 })
-export class IncrementComponent implements OnInit{
+export class IncrementComponent implements OnInit {
   ngOnInit() {
-    this.a_btnColor = `btn ${this.a_btnColor}`
+    this.a_btnColor = `btn ${this.a_btnColor}`;
   }
 
   @Input('inn_value') a_progress: number = 0;
@@ -19,12 +19,23 @@ export class IncrementComponent implements OnInit{
     if (this.a_progress >= 100 && value >= 0) {
       this.mSendValue.emit(100);
       return (this.a_progress = 100);
-    } else if (this.a_progress <= 0 && value < 0) {
+    }
+    if (this.a_progress <= 0 && value < 0) {
       this.mSendValue.emit(0);
       return (this.a_progress = 0);
-    } else {
-      this.a_progress = this.a_progress + value
-      return this.mSendValue.emit(this.a_progress);
     }
+    this.a_progress = this.a_progress + value;
+    return this.mSendValue.emit(this.a_progress);
+  }
+
+  mOnChange(pInn: number) {
+    if (pInn >= 100) {
+      this.a_progress = 100;
+    } else if (pInn <= 0) {
+      this.a_progress = 0;
+    } else {
+      this.a_progress = pInn;
+    }
+    this.mSendValue.emit(this.a_progress);
   }
 }
